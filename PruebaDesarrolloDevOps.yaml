@@ -3,20 +3,20 @@ Metadata:
   'AWS::CloudFormation::Designer':
     VPCTest1:
       size:
-        width: 150
-        height: 150
+        width: 100
+        height: 110
       position:
-        x: 220
-        'y': 280
+        x: 110
+        'y': 300
       z: 1
       embeds: []
     HostedZoneTest1:
       size:
-        width: 150
-        height: 150
+        width: 120
+        height: 90
       position:
-        x: -10
-        'y': 280
+        x: -130
+        'y': 170
       z: 1
       embeds: []
     SubnetTest1:
@@ -60,8 +60,8 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: -36.54650276212995
-        'y': 451.88617801845777
+        x: 600
+        'y': 380
       z: 0
       embeds: []
     EC2Instance2:
@@ -69,8 +69,8 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 50
-        'y': 450
+        x: 600
+        'y': 270
       z: 0
       embeds: []
     EC2Instance3:
@@ -78,34 +78,109 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 150
-        'y': 450
+        x: 600
+        'y': 160
       z: 0
       embeds: []
-    0021b511-f97d-4c05-baed-5f3462531d1a:
+    InternetGateway1:
       size:
         width: 60
         height: 60
       position:
-        x: 87.21028245666292
-        'y': 129.25660223352912
+        x: 120
+        'y': 190
       z: 0
-    7795b0f5-1060-4461-b6ce-389f13aa1905:
+      embeds: []
+    NatGateway1:
       size:
         width: 60
         height: 60
       position:
-        x: 218.91174325914028
-        'y': 135.04567840434453
+        x: 220
+        'y': 190
       z: 0
-    cb4b8966-20cc-4c69-9223-1249bef58fba:
+      embeds: []
+    AplicationLoadBalacer1:
       size:
         width: 60
         height: 60
       position:
-        x: 333.2459976327445
-        'y': 137.94021648975223
+        x: 10
+        'y': 300
       z: 0
+      embeds: []
+    DMS1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 710
+        'y': 190
+      z: 0
+      embeds: []
+    RDSPostresSQL1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 780
+        'y': 260
+      z: 0
+      embeds: []
+    EC2Instance4:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 610
+        'y': 480
+      z: 0
+      embeds: []
+    Lambda1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 700
+        'y': 440
+      z: 0
+      embeds: []
+    Lambda2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 780
+        'y': 490
+      z: 0
+      embeds: []
+    Lambda3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 700
+        'y': 530
+      z: 0
+      embeds: []
+    Bucket1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 700
+        'y': 350
+      z: 0
+      embeds: []
+    Bucket2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 780
+        'y': 350
+      z: 0
+      embeds: []
 Resources:
   HostedZoneTest:
     Type: 'AWS::Route53::HostedZone'
@@ -187,21 +262,71 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance3
-  EC2IG3YDE1:
+  InternetGateway1:
     Type: 'AWS::EC2::InternetGateway'
     Properties: {}
     Metadata:
       'AWS::CloudFormation::Designer':
-        id: 0021b511-f97d-4c05-baed-5f3462531d1a
-  EC2NG34ACZ:
+        id: InternetGateway1
+  NatGateway1:
     Type: 'AWS::EC2::NatGateway'
     Properties: {}
     Metadata:
       'AWS::CloudFormation::Designer':
-        id: 7795b0f5-1060-4461-b6ce-389f13aa1905
-  ELBV2LB1CLT3:
+        id: NatGateway1
+  AplicationLoadBalacer1:
     Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
     Properties: {}
     Metadata:
       'AWS::CloudFormation::Designer':
-        id: cb4b8966-20cc-4c69-9223-1249bef58fba
+        id: AplicationLoadBalacer1
+  DMS1:
+    Type: 'AWS::DMS::ReplicationInstance'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: DMS1
+  RDSPostresSQL1:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      Engine: postgres
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: RDSPostresSQL1
+  EC2Instance4:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: m3.medium
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: EC2Instance4
+  Lambda1:
+    Type: 'AWS::Lambda::Function'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: Lambda1
+  Lambda2:
+    Type: 'AWS::Lambda::Function'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: Lambda2
+  Lambda3:
+    Type: 'AWS::Lambda::Function'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: Lambda3
+  Bucket1:
+    Type: 'AWS::S3::Bucket'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: Bucket1
+  Bucket2:
+    Type: 'AWS::S3::Bucket'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: Bucket2
