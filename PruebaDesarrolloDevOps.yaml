@@ -40,7 +40,7 @@ Metadata:
     SubnetTest4:
       size:
         width: 110
-        height: 110
+        height: 100
       position:
         x: 440
         'y': 470
@@ -82,7 +82,30 @@ Metadata:
         'y': 450
       z: 0
       embeds: []
-      
+    0021b511-f97d-4c05-baed-5f3462531d1a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 87.21028245666292
+        'y': 129.25660223352912
+      z: 0
+    7795b0f5-1060-4461-b6ce-389f13aa1905:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 218.91174325914028
+        'y': 135.04567840434453
+      z: 0
+    cb4b8966-20cc-4c69-9223-1249bef58fba:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 333.2459976327445
+        'y': 137.94021648975223
+      z: 0
 Resources:
   HostedZoneTest:
     Type: 'AWS::Route53::HostedZone'
@@ -146,21 +169,39 @@ Resources:
   EC2Instance1:
     Type: 'AWS::EC2::Instance'
     Properties:
-      InstanceType: 'm4.large'
+      InstanceType: m4.large
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance1
   EC2Instance2:
     Type: 'AWS::EC2::Instance'
     Properties:
-      InstanceType: 'm4.large'
+      InstanceType: m4.large
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance2
   EC2Instance3:
     Type: 'AWS::EC2::Instance'
     Properties:
-      InstanceType: 'm4.large'
+      InstanceType: m4.large
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance3
+  EC2IG3YDE1:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0021b511-f97d-4c05-baed-5f3462531d1a
+  EC2NG34ACZ:
+    Type: 'AWS::EC2::NatGateway'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7795b0f5-1060-4461-b6ce-389f13aa1905
+  ELBV2LB1CLT3:
+    Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: cb4b8966-20cc-4c69-9223-1249bef58fba
