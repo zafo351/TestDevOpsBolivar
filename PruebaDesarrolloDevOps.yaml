@@ -1,0 +1,166 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    VPCTest1:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 220
+        'y': 280
+      z: 1
+      embeds: []
+    HostedZoneTest1:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: -10
+        'y': 280
+      z: 1
+      embeds: []
+    SubnetTest1:
+      size:
+        width: 100
+        height: 80
+      position:
+        x: 450
+        'y': 90
+      z: 1
+      embeds: []
+    SubnetTest2:
+      size:
+        width: 100
+        height: 80
+      position:
+        x: 450
+        'y': 200
+      z: 1
+      embeds: []
+    SubnetTest4:
+      size:
+        width: 110
+        height: 110
+      position:
+        x: 440
+        'y': 470
+      z: 1
+      embeds: []
+    SubnetTest3:
+      size:
+        width: 90
+        height: 90
+      position:
+        x: 450
+        'y': 330
+      z: 1
+      embeds: []
+    EC2Instance1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -36.54650276212995
+        'y': 451.88617801845777
+      z: 0
+      embeds: []
+    EC2Instance2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 50
+        'y': 450
+      z: 0
+      embeds: []
+    EC2Instance3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 150
+        'y': 450
+      z: 0
+      embeds: []
+      
+Resources:
+  HostedZoneTest:
+    Type: 'AWS::Route53::HostedZone'
+    Properties:
+      Name: devops-test-bolivar.com
+    Tags:
+      - Key: stack
+        Value: test
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: HostedZoneTest1
+  VPCTest:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      EnableDnsHostnames: true
+      CidrBlock: 10.0.0.0/16
+    Tags:
+      - Key: stack
+        Value: test
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: VPCTest1
+  SubnetTest1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId:
+        Ref: SubnetTest1
+      CidrBlock: 10.0.0.0/24
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: SubnetTest1
+  SubnetTest2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId:
+        Ref: SubnetTest2
+      CidrBlock: 10.0.1.0/24
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: SubnetTest2
+  SubnetTest3:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId:
+        Ref: SubnetTest3
+      CidrBlock: 10.0.2.0/24
+      MapPublicIpOnLaunch: true
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: SubnetTest3
+  SubnetTest4:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId:
+        Ref: SubnetTest4
+      CidrBlock: 10.0.3.0/24
+      MapPublicIpOnLaunch: true
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: SubnetTest4
+  EC2Instance1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: 'm4.large'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: EC2Instance1
+  EC2Instance2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: 'm4.large'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: EC2Instance2
+  EC2Instance3:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: 'm4.large'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: EC2Instance3
