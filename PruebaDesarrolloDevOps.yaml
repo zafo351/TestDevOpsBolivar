@@ -3,203 +3,603 @@ Metadata:
   'AWS::CloudFormation::Designer':
     VPCTest1:
       size:
-        width: 100
-        height: 110
+        width: 3060
+        height: 1550
       position:
-        x: 110
-        'y': 300
+        x: 100
+        'y': 360
       z: 1
-      embeds: []
+      embeds:
+        - Bucket2
+        - Bucket1
+        - Lambda3
+        - Lambda1
+        - EC2Instance4
+        - DMS1
+        - NatGateway1
+        - InternetGateway1
+        - ELBSecurityGroup
+        - InstanceSecurityGroup
+        - SubnetTest4
+        - SubnetTest3
+        - AplicationLoadBalacer1
+        - TargetGroup3
+        - TargetGroup2
+        - TargetGroup1
+        - ELBListener
+        - SubnetTest2
+        - SubnetTest1
+        - RoleFunction
+        - Lambda2
     HostedZoneTest1:
       size:
-        width: 120
-        height: 90
+        width: 180
+        height: 150
       position:
-        x: -130
-        'y': 170
-      z: 1
-      embeds: []
-    SubnetTest1:
-      size:
-        width: 100
-        height: 80
-      position:
-        x: 450
+        x: 480
         'y': 90
       z: 1
+      embeds:
+        - 28503f0f-4897-4cab-abdd-73c3eb3bc31a
+    SubnetTest1:
+      size:
+        width: 540
+        height: 550
+      position:
+        x: 850
+        'y': 390
+      z: 2
+      parent: VPCTest1
       embeds: []
     SubnetTest2:
       size:
-        width: 100
-        height: 80
+        width: 840
+        height: 570
       position:
-        x: 450
-        'y': 200
-      z: 1
-      embeds: []
+        x: 2160
+        'y': 430
+      z: 2
+      parent: VPCTest1
+      embeds:
+        - RDSPostresSQL1
     SubnetTest4:
       size:
-        width: 110
-        height: 100
+        width: 780
+        height: 750
       position:
-        x: 440
-        'y': 470
-      z: 1
-      embeds: []
+        x: 2310
+        'y': 1100
+      z: 2
+      parent: VPCTest1
+      embeds:
+        - EC2Instance3
     SubnetTest3:
       size:
-        width: 90
-        height: 90
+        width: 600
+        height: 780
       position:
-        x: 450
-        'y': 330
-      z: 1
-      embeds: []
+        x: 800
+        'y': 1120
+      z: 2
+      parent: VPCTest1
+      embeds:
+        - EC2Instance2
+        - EC2Instance1
     EC2Instance1:
       size:
         width: 60
         height: 60
       position:
-        x: 600
-        'y': 380
-      z: 0
+        x: 1130
+        'y': 1300
+      z: 3
+      parent: SubnetTest3
       embeds: []
+      isassociatedwith:
+        - InstanceSecurityGroup
+      iscontainedinside:
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
     EC2Instance2:
       size:
         width: 60
         height: 60
       position:
-        x: 600
-        'y': 270
-      z: 0
+        x: 1000
+        'y': 1710
+      z: 3
+      parent: SubnetTest3
       embeds: []
+      isassociatedwith:
+        - InstanceSecurityGroup
+      iscontainedinside:
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
+        - SubnetTest3
     EC2Instance3:
       size:
         width: 60
         height: 60
       position:
-        x: 600
-        'y': 160
-      z: 0
+        x: 2460
+        'y': 1550
+      z: 3
+      parent: SubnetTest4
       embeds: []
+      isassociatedwith:
+        - InstanceSecurityGroup
+      iscontainedinside:
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
+        - SubnetTest4
     InternetGateway1:
       size:
         width: 60
         height: 60
       position:
-        x: 120
-        'y': 190
-      z: 0
+        x: 130
+        'y': 480
+      z: 2
+      parent: VPCTest1
       embeds: []
     NatGateway1:
       size:
         width: 60
         height: 60
       position:
-        x: 220
-        'y': 190
-      z: 0
+        x: 580
+        'y': 390
+      z: 2
+      parent: VPCTest1
       embeds: []
     AplicationLoadBalacer1:
       size:
         width: 60
         height: 60
       position:
-        x: 10
-        'y': 300
-      z: 0
+        x: 250
+        'y': 810
+      z: 2
+      parent: VPCTest1
       embeds: []
+      isassociatedwith:
+        - ELBSecurityGroup
+      iscontainedinside:
+        - SubnetTest3
+        - SubnetTest4
     DMS1:
       size:
         width: 60
         height: 60
       position:
-        x: 710
-        'y': 190
-      z: 0
+        x: 1450
+        'y': 570
+      z: 2
+      parent: VPCTest1
       embeds: []
     RDSPostresSQL1:
       size:
         width: 60
         height: 60
       position:
-        x: 780
-        'y': 260
-      z: 0
+        x: 2240
+        'y': 500
+      z: 3
+      parent: SubnetTest2
       embeds: []
+      dependson:
+        - SubnetTest2
     EC2Instance4:
       size:
         width: 60
         height: 60
       position:
-        x: 610
-        'y': 480
-      z: 0
+        x: 1450
+        'y': 450
+      z: 2
+      parent: VPCTest1
       embeds: []
     Lambda1:
       size:
         width: 60
         height: 60
       position:
-        x: 700
-        'y': 440
-      z: 0
+        x: 1480
+        'y': 780
+      z: 2
+      parent: VPCTest1
       embeds: []
     Lambda2:
       size:
         width: 60
         height: 60
       position:
-        x: 780
-        'y': 490
-      z: 0
+        x: 1990
+        'y': 860
+      z: 2
+      parent: VPCTest1
       embeds: []
     Lambda3:
       size:
         width: 60
         height: 60
       position:
-        x: 700
-        'y': 530
-      z: 0
+        x: 1690
+        'y': 1160
+      z: 2
+      parent: VPCTest1
       embeds: []
     Bucket1:
       size:
         width: 60
         height: 60
       position:
-        x: 700
-        'y': 350
-      z: 0
+        x: 1600
+        'y': 540
+      z: 2
+      parent: VPCTest1
       embeds: []
     Bucket2:
       size:
         width: 60
         height: 60
       position:
-        x: 780
-        'y': 350
-      z: 0
+        x: 1600
+        'y': 450
+      z: 2
+      parent: VPCTest1
+      embeds: []
+    28503f0f-4897-4cab-abdd-73c3eb3bc31a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 540
+        'y': 150
+      z: 2
+      parent: HostedZoneTest1
+      embeds: []
+    TargetGroup1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 550
+        'y': 480
+      z: 2
+      parent: VPCTest1
+      embeds: []
+      iscontainedinside:
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+    InstanceSecurityGroup:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1720
+        'y': 1410
+      z: 2
+      parent: VPCTest1
+      embeds: []
+      iscontainedinside:
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+    ELBSecurityGroup:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 460
+        'y': 1050
+      z: 2
+      parent: VPCTest1
+      embeds: []
+      iscontainedinside:
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+    ELBListener:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 310
+        'y': 540
+      z: 2
+      parent: VPCTest1
+      embeds: []
+    TargetGroup2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 580
+        'y': 690
+      z: 2
+      parent: VPCTest1
+      embeds: []
+      iscontainedinside:
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+    TargetGroup3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 550
+        'y': 870
+      z: 2
+      parent: VPCTest1
+      embeds: []
+      iscontainedinside:
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+        - VPCTest1
+    RoleFunction:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1750
+        'y': 620
+      z: 2
+      parent: VPCTest1
       embeds: []
 Resources:
   HostedZoneTest:
     Type: 'AWS::Route53::HostedZone'
     Properties:
       Name: devops-test-bolivar.com
-    Tags:
-      - Key: stack
-        Value: test
+      VPCs:
+        VPCId: !GetAtt VPCTest.VpcId
+        VPCRegion: us-east-1
     Metadata:
       'AWS::CloudFormation::Designer':
         id: HostedZoneTest1
+  myDNS:
+    Type: 'AWS::Route53::RecordSetGroup'
+    Properties:
+      HostedZoneName: example.com.
+      Comment: Zone apex alias targeted to myELB LoadBalancer.
+      RecordSets:
+        - Name: example.com.
+          Type: A
+          AliasTarget:
+            HostedZoneId: !GetAtt AplicationLoadBalacer1.CanonicalHostedZoneID
+            DNSName: !GetAtt AplicationLoadBalacer1.DNSName
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 28503f0f-4897-4cab-abdd-73c3eb3bc31a
   VPCTest:
     Type: 'AWS::EC2::VPC'
     Properties:
       EnableDnsHostnames: true
       CidrBlock: 10.0.0.0/16
-    Tags:
-      - Key: stack
-        Value: test
     Metadata:
       'AWS::CloudFormation::Designer':
         id: VPCTest1
@@ -207,7 +607,7 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId:
-        Ref: SubnetTest1
+        Ref: VPCTest
       CidrBlock: 10.0.0.0/24
     Metadata:
       'AWS::CloudFormation::Designer':
@@ -216,7 +616,7 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId:
-        Ref: SubnetTest2
+        Ref: VPCTest
       CidrBlock: 10.0.1.0/24
     Metadata:
       'AWS::CloudFormation::Designer':
@@ -225,7 +625,7 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId:
-        Ref: SubnetTest3
+        Ref: VPCTest
       CidrBlock: 10.0.2.0/24
       MapPublicIpOnLaunch: true
     Metadata:
@@ -235,7 +635,7 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId:
-        Ref: SubnetTest4
+        Ref: VPCTest
       CidrBlock: 10.0.3.0/24
       MapPublicIpOnLaunch: true
     Metadata:
@@ -245,6 +645,9 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties:
       InstanceType: m4.large
+      SubnetId: !Ref SubnetTest3
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance1
@@ -252,6 +655,9 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties:
       InstanceType: m4.large
+      SubnetId: !Ref SubnetTest3
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance2
@@ -259,6 +665,9 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties:
       InstanceType: m4.large
+      SubnetId: !Ref SubnetTest4
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance3
@@ -276,10 +685,15 @@ Resources:
         id: NatGateway1
   AplicationLoadBalacer1:
     Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
-    Properties: {}
     Metadata:
       'AWS::CloudFormation::Designer':
         id: AplicationLoadBalacer1
+    Properties:
+      Subnets:
+        - !Ref SubnetTest3
+        - !Ref SubnetTest4
+      SecurityGroups:
+        - !Ref ELBSecurityGroup
   DMS1:
     Type: 'AWS::DMS::ReplicationInstance'
     Properties: {}
@@ -293,6 +707,8 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: RDSPostresSQL1
+    DependsOn:
+      - SubnetTest2
   EC2Instance4:
     Type: 'AWS::EC2::Instance'
     Properties:
@@ -300,33 +716,252 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: EC2Instance4
+  RoleFunction:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: 'sts:AssumeRole'
+        ManagedPolicyArns:
+          - 'arn:aws:iam::aws:policy/service role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: RoleFunction
   Lambda1:
     Type: 'AWS::Lambda::Function'
-    Properties: {}
+    Properties:
+      FunctionName: Lambda1Min
+      Role: !GetAtt RoleFunction.Arn
+      Handler: index.handler
+      Code:
+        ZipFile: |
+          var aws = require('aws-sdk')
+          var response = require('cfn-response')
+          exports.handler = function(event, context) {
+              console.log("REQUEST RECEIVED:\n" + JSON.stringify(event))
+              // For Delete requests, immediately send a SUCCESS response.
+              if (event.RequestType == "Delete") {
+                  response.send(event, context, "SUCCESS")
+                  return
+              }
+              var responseStatus = "FAILED"
+              var responseData = {}
+              var functionName = event.ResourceProperties.FunctionName
+              var lambda = new aws.Lambda()
+              lambda.invoke({ FunctionName: functionName }, function(err, invokeResult) {
+                  if (err) {
+                      responseData = {Error: "Invoke call failed"}
+                      console.log(responseData.Error + ":\n", err)
+                  }
+                  else responseStatus = "SUCCESS"
+                  response.send(event, context, responseStatus, responseData)
+              })
+          }
+      Runtime: nodejs16.x
     Metadata:
       'AWS::CloudFormation::Designer':
         id: Lambda1
   Lambda2:
     Type: 'AWS::Lambda::Function'
-    Properties: {}
+    Properties:
+      FunctionName: Lambda15Min
+      Role: !GetAtt RoleFunction.Arn
+      Handler: index.handler
+      Code:
+        ZipFile: |
+          var aws = require('aws-sdk')
+          var response = require('cfn-response')
+          exports.handler = function(event, context) {
+              console.log("REQUEST RECEIVED:\n" + JSON.stringify(event))
+              // For Delete requests, immediately send a SUCCESS response.
+              if (event.RequestType == "Delete") {
+                  response.send(event, context, "SUCCESS")
+                  return
+              }
+              var responseStatus = "FAILED"
+              var responseData = {}
+              var functionName = event.ResourceProperties.FunctionName
+              var lambda = new aws.Lambda()
+              lambda.invoke({ FunctionName: functionName }, function(err, invokeResult) {
+                  if (err) {
+                      responseData = {Error: "Invoke call failed"}
+                      console.log(responseData.Error + ":\n", err)
+                  }
+                  else responseStatus = "SUCCESS"
+                  response.send(event, context, responseStatus, responseData)
+              })
+          }
+      Runtime: nodejs16.x
     Metadata:
       'AWS::CloudFormation::Designer':
         id: Lambda2
   Lambda3:
     Type: 'AWS::Lambda::Function'
-    Properties: {}
+    Properties:
+      FunctionName: Lambda60Min
+      Role: !GetAtt RoleFunction.Arn
+      Handler: index.handler
+      Code:
+        ZipFile: |
+          var aws = require('aws-sdk')
+          var response = require('cfn-response')
+          exports.handler = function(event, context) {
+              console.log("REQUEST RECEIVED:\n" + JSON.stringify(event))
+              // For Delete requests, immediately send a SUCCESS response.
+              if (event.RequestType == "Delete") {
+                  response.send(event, context, "SUCCESS")
+                  return
+              }
+              var responseStatus = "FAILED"
+              var responseData = {}
+              var functionName = event.ResourceProperties.FunctionName
+              var lambda = new aws.Lambda()
+              lambda.invoke({ FunctionName: functionName }, function(err, invokeResult) {
+                  if (err) {
+                      responseData = {Error: "Invoke call failed"}
+                      console.log(responseData.Error + ":\n", err)
+                  }
+                  else responseStatus = "SUCCESS"
+                  response.send(event, context, responseStatus, responseData)
+              })
+          }
+      Runtime: nodejs16.x
     Metadata:
       'AWS::CloudFormation::Designer':
         id: Lambda3
   Bucket1:
     Type: 'AWS::S3::Bucket'
-    Properties: {}
+    Properties:
+      Tags:
+        Key: Description
+        Value: Image and documents
     Metadata:
       'AWS::CloudFormation::Designer':
         id: Bucket1
   Bucket2:
     Type: 'AWS::S3::Bucket'
-    Properties: {}
+    Properties:
+      AccessControl: PublicRead
+      BucketName: Statics
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
     Metadata:
       'AWS::CloudFormation::Designer':
         id: Bucket2
+  TargetGroup1:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      HealthCheckIntervalSeconds: 6
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      Name: TargetGroup1
+      Port: 80
+      Protocol: HTTP
+      TargetType: instace
+      Targets:
+        - id: !Ref EC2Instance1
+          Port: 3001
+        - id: !Ref EC2Instance2
+          Port: 3001
+        - id: !Ref EC2Instance3
+          Port: 3001
+      VpcId: !Ref VPCTest
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: TargetGroup1
+  TargetGroup2:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      HealthCheckIntervalSeconds: 6
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      Name: TargetGroup2
+      Port: 80
+      Protocol: HTTP
+      TargetType: instace
+      Targets:
+        - id: !Ref EC2Instance1
+          Port: 3002
+        - id: !Ref EC2Instance2
+          Port: 3002
+        - id: !Ref EC2Instance3
+          Port: 3002
+      VpcId: !Ref VPCTest
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: TargetGroup2
+  TargetGroup3:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      HealthCheckIntervalSeconds: 6
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      Name: TargetGroup3
+      Port: 80
+      Protocol: HTTP
+      TargetType: instace
+      Targets:
+        - id: !Ref EC2Instance1
+          Port: 3003
+        - id: !Ref EC2Instance2
+          Port: 3003
+        - id: !Ref EC2Instance3
+          Port: 3003
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: TargetGroup3
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupName: AllowEc2Traffic
+      GroupDescription: Enable SSH access and HTTP access on the inbound port for EC2
+      VpcId: !Ref VPCTest
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: InstanceSecurityGroup
+  ELBSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !GetAtt VPCTest.VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ELBSecurityGroup
+  ELBListener:
+    Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup1
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup2
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup3
+      LoadBalancerArn: !Ref AplicationLoadBalacer1
+      Port: 80
+      Protocol: HTTP
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ELBListener
